@@ -1,0 +1,109 @@
+
+/* CUSTOM GOOGLE FONTS */
+
+/* LOGO */
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+/* JUMBOTRON - MAIN TEXT - HOMEPAGE */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,500i');
+
+/* 
+    CUSTOM CSS CODE
+
+    TIP:
+
+    1. Add the name of the component. 
+    2. Keep it as simple and meaningful as possible.
+    3. Try to maintain heirarchy. The order in which the element exists in the HTML,
+        the same order is used to style the components. (OPTIONAL)
+
+    Shukriya. Continue.
+
+*/
+
+/* 
+
+    GENERIC TAG STYLING - LIKE A, H1, H2...
+
+*/
+
+body {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 33px;
+    font-style: normal;
+    color:white;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+
+/* 
+
+    CLASS BASED STYLING - LIKE .NAV, .NAVBAR....
+
+*/
+
+
+.main-bg {
+    background: url('../MEDIA/LAPTOP.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    height:100vh;
+    width:100%;
+
+}
+
+.navbar-brand {
+    font-family: 'Anton';
+}
+
+.navbar-brand img {
+    color: white;
+}
+
+.navbar-brand-text {
+    margin-left: 5px;
+}
+
+.navbar-transparent {
+    background:transparent;
+}
+
+/* The Infamous Hamburger of Bootstrap */
+.fas.fa-bars {
+    color:white;
+  }
+
+
+
+/* 
+
+MAIN CONTENT 
+
+*/
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.container {
+    width: 30%;
+    margin-left: 50px;
+    margin-right: 0px;
+}
+
+.btn-light:hover {
+    background:#73538C;
+    color:white;
+    border: none;
+    transition: 0.9 ease-in-out;
+}
