@@ -1,4 +1,3 @@
-
 /* CUSTOM GOOGLE FONTS */
 
 /* LOGO */
@@ -32,7 +31,12 @@ body {
     font-weight: 400;
     font-size: 33px;
     font-style: normal;
-    color:white;
+    color: white;
+
+    height: 100%;
+    width: 100%;
+
+
 }
 
 a {
@@ -51,15 +55,23 @@ a:hover {
 */
 
 
-.main-bg {
+.parallax-effect {
+
     background: url('../MEDIA/LAPTOP.jpg');
+
+    /* Set a specific height */
+    height: 100vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    height:100vh;
-    width:100%;
 
+}
+
+.main-bg {
+    width: 100%;
 }
 
 .navbar-brand {
@@ -75,13 +87,13 @@ a:hover {
 }
 
 .navbar-transparent {
-    background:transparent;
+    background: transparent;
 }
 
 /* The Infamous Hamburger of Bootstrap */
 .fas.fa-bars {
-    color:white;
-  }
+    color: white;
+}
 
 
 
@@ -101,9 +113,38 @@ MAIN CONTENT
     margin-right: 0px;
 }
 
+button.btn {
+    margin-bottom: 10px;
+}
+
 .btn-light:hover {
-    background:#73538C;
-    color:white;
+    background: #73538C;
+    color: white;
     border: none;
     transition: 0.9 ease-in-out;
+}
+
+/* 
+
+    MAIN CONTENT PART 2 - CURRENT STATS!
+
+*/
+.currentStatSection {
+    height: 1000px;
+    width: 100%;
+    background: red;
+}
+
+
+/* 
+
+    MEDIA QUERIES - ADD A TAG IF YOU DON'T WANT THEM MODIFIED!
+
+*/
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+    .main-bg {
+        background-attachment: scroll;
+    }
 }
