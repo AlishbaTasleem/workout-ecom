@@ -47,6 +47,13 @@ a:hover {
     color: white;
 }
 
+hr {
+    color: white;
+    background: white;
+    width: 60%;
+    opacity: 0.1;
+}
+
 
 /* 
 
@@ -107,7 +114,7 @@ MAIN CONTENT
     background-color: transparent;
 }
 
-.container {
+.mainHeader .container {
     width: 30%;
     margin-left: 50px;
     margin-right: 0px;
@@ -130,11 +137,50 @@ button.btn {
 
 */
 .currentStatSection {
-    height: 1000px;
+    height: 100vh;
+    width: 100%;
+    background: #1F1834;
+}
+
+.introduction {
+    margin-top: 10%;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.em-introduction {
+    padding-top: 20px;
+    font-size:50px;
+    text-transform: capitalize;
+}
+
+.card {
+    background: transparent;
+    border: none;
+}
+
+.card-title {
+    font-size:45px;
+}
+
+.card-body {
+
+    font-size: 20px;
+}
+
+/* 
+
+    SERVICES SECTION - THIRD PART OF MAIN PAGE CONTENT
+
+*/
+
+
+.servicesSection {
+    height: 100vh;
     width: 100%;
     background: white;
-    padding-top: 10%;
 }
+
 
 
 /* 

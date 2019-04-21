@@ -1,19 +1,27 @@
+.parentContactUs {
+    height: 1000px;
+    width: 100%;
+    background: white;
+}
+
 button.btn {
     margin-bottom: 10px;
     width: 40%;
 }
+
 .btn-light:hover {
     background: #73538C;
     color: white;
     border: none;
     transition: 0.9 ease-in-out;
 }
+
 /*the main contact us div */
-div.childContactus{ 
+div.childContactus {
     color: black;
     background: transparent;
     font-size: 15px;
-    margin: 0 auto;
+    margin: 30px auto;
     width: 70%;
     padding-left: 3%;
     padding-right: 3%;
@@ -22,35 +30,40 @@ div.childContactus{
     border: 1px solid black;
     padding-top: 3%;
 }
-.childContactus label{
+
+.childContactus label {
     margin-bottom: 3rem;
 }
-input[type=text]{
+
+input[type=text] {
     outline: none;
 }
 
 /*to remove blue glowy thing from input fields */
-.form-control:focus{
+.form-control:focus {
     border-color: #555;
     outline: 0;
     outline: thin dotted \9;
     transition: 0.8s;
     /* IE6-9 */
-  
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(114, 109, 109, 0.6);
-    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(90, 88, 88, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(114, 111, 111, 0.6);
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(114, 109, 109, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(90, 88, 88, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(114, 111, 111, 0.6);
 }
-.editIcon{
+
+.editIcon {
     margin-bottom: 2rem;
     margin-left: 1rem;
 }
-.editLabel{
+
+.editLabel {
     margin-top: -1rem;
     margin-left: 1rem;
     text-emphasis: wrap;
     text-align: center;
 }
-textarea{
+
+textarea {
     resize: none;
 }

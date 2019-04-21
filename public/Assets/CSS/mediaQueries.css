@@ -14,7 +14,7 @@
   */
   
   @media (min-width: 1025px) and (max-width: 1280px) {
-    .container {
+    .mainHeader .container {
       width: 50%;
   }
     
@@ -27,7 +27,7 @@
   
   @media (min-width: 768px) and (max-width: 1024px) {
     
-    .container {
+    .mainHeader .container {
         width: 50%;
     }
 
@@ -40,7 +40,7 @@
   
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     
-    .container {
+    .mainHeader .container {
         width: 50%;
     }
 
@@ -52,7 +52,7 @@
   */
   
   @media (min-width: 481px) and (max-width: 767px) {
-    .container {
+    .mainHeader .container {
         width: 70%;
     }
     
@@ -65,7 +65,7 @@
   */
   
   @media (min-width: 320px) and (max-width: 480px) {
-    .container {
+    .mainHeader .container {
         width: 90%;
     }
     
