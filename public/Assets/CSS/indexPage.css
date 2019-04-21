@@ -144,14 +144,15 @@ button.btn {
 
 .introduction {
     margin-top: 10%;
-    margin-bottom: 30px;
+    font-size:18px;
+    margin-bottom: 35px;
     text-transform: uppercase;
 }
 
 .em-introduction {
     padding-top: 20px;
     font-size:50px;
-    text-transform: capitalize;
+    text-transform: none;
 }
 
 .card {
@@ -178,8 +179,11 @@ button.btn {
 .servicesSection {
     height: 100vh;
     width: 100%;
-    background: white;
+    background: white;  
+    color: black;
+    font-weight: bold;
 }
+
 
 
 
