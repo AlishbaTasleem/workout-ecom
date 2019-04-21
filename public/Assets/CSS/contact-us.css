@@ -8,7 +8,8 @@ button.btn {
     border: none;
     transition: 0.9 ease-in-out;
 }
-div.childContactus{
+/*the main contact us div */
+div.childContactus{ 
     color: black;
     background: transparent;
     font-size: 15px;
@@ -28,7 +29,7 @@ input[type=text]{
     outline: none;
 }
 
-
+/*to remove blue glowy thing from input fields */
 .form-control:focus{
     border-color: #555;
     outline: 0;
