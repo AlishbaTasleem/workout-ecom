@@ -8,3 +8,20 @@ button.btn {
     border: none;
     transition: 0.9 ease-in-out;
 }
+div.childContactus{
+    color: black;
+    font-size: 15px;
+    background-color: white;
+    margin: 0 auto;
+    width: 75%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 1em;
+    height: 500px;
+}
+.childContactus label{
+    margin-bottom: 2rem;
+}
+input[type=text]:focus {
+    border: 3px solid #555;
+}
