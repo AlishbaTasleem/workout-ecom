@@ -16,7 +16,7 @@
     3. Try to maintain heirarchy. The order in which the element exists in the HTML,
         the same order is used to style the components. (OPTIONAL)
 
-    Shukriya. Continue.
+    Continue.
 
 */
 
@@ -29,7 +29,7 @@
 body {
     font-family: 'Montserrat';
     font-weight: 400;
-    font-size: 33px;
+    /* font-size: 33px; */
     font-style: normal;
     color: white;
 
@@ -61,13 +61,22 @@ hr {
 
 */
 
+.under-construction {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: right;
+    height: 20px;
+    background: black;
+    color: white;
+    font-size: 15px;
+}
 
 .parallax-effect {
 
     background: url('../MEDIA/LAPTOP.jpg');
 
     /* Set a specific height */
-    height: 100vh;
+    height: 100%;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -95,6 +104,23 @@ hr {
 
 .navbar-transparent {
     background: transparent;
+}
+
+button:focus {
+
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focusring-color;
+
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.nav-link:hover {
+    color: #0082A6;
+    transition: 1.5s;
 }
 
 /* The Infamous Hamburger of Bootstrap */
@@ -137,21 +163,25 @@ button.btn {
 
 */
 .currentStatSection {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background: #1F1834;
 }
 
+.statsSection {
+    margin-bottom: 50px;
+}
+
 .introduction {
     margin-top: 10%;
-    font-size:18px;
+    font-size: 18px;
     margin-bottom: 35px;
     text-transform: uppercase;
 }
 
 .em-introduction {
     padding-top: 20px;
-    font-size:50px;
+    font-size: 50px;
     text-transform: none;
 }
 
@@ -161,7 +191,7 @@ button.btn {
 }
 
 .card-title {
-    font-size:45px;
+    font-size: 45px;
 }
 
 .card-body {
@@ -177,14 +207,13 @@ button.btn {
 
 
 .servicesSection {
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    background: white;  
+    background: white;
     color: black;
     font-weight: bold;
+    margin-bottom:50px;
 }
-
-
 
 
 /* 
@@ -193,7 +222,6 @@ button.btn {
 
 */
 
-/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
 @media only screen and (max-device-width: 1366px) {
     .main-bg {
         background-attachment: scroll;
