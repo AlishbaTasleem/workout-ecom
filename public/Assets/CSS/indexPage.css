@@ -32,11 +32,6 @@ body {
     /* font-size: 33px; */
     font-style: normal;
     color: white;
-
-    height: 100%;
-    width: 100%;
-
-
 }
 
 html,
@@ -183,6 +178,7 @@ button.btn {
 
 .statsSection {
     margin-bottom: 50px;
+    overflow-x: auto;
 }
 
 .introduction {
