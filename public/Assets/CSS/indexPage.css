@@ -245,6 +245,11 @@ div.logos {
     font-size: 15px;
 }
 
+.logos small {
+    font-size: 15px;
+    display: block;
+    margin-top:5px;
+}
 
 /* 
 
