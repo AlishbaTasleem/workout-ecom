@@ -1,18 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+
 import './App.css';
-import Landing from './components/layout/Landing';
-import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
+
+import Landing from './components/layout/Landing/Landing';
+import Navbar from './components/layout/Navbar/Navbar'
+import Footer from './components/layout/Footer/Footer';
+
+
 
 function App() {
   return (
 	  <Router>
-		  <div className="App">
-			<Navbar />
-			<Route exact path="/" component={Landing} /> 
-			<Footer />  
-		</div>		  
+			<div>			
+				<Route exact path="/" component={Landing} /> 
+				<Footer />  
+			</div>		  
 	</Router>  
 
   );

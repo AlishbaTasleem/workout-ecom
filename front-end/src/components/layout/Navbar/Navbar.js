@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { SVGLogo } from '../../assets/SVGs/WebPack.svg';
+import styles from './Navbar.css';
+
+var SVGLogo = require('../../../assets/SVGs/WebPack.svg');
 
 export default class Navbar extends Component {
     render() {
         return (
             <React.Fragment>
                 {/* <!-- Add class 'navbar-transparent' --> */}
-                <nav className="navbar navbar-expand-lg navbar-dark" role="navigation">
+                <nav className="navbar navbar-expand-lg navbar-transparent" role="navigation">
 
                 {/* <!-- ADD CUSTOM BRAND LOGO HERE --> */}
                     <a className="navbar-brand" href="index.html">

@@ -1,0 +1,27 @@
+
+.navbar-brand {
+    font-family: 'Anton';
+}
+
+.navbar-brand img {
+    color: white;
+}
+
+.navbar-transparent {
+    background: transparent;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.nav-link:hover {
+    color: #0082A6;
+    transition: 1.5s;
+}
+
+/* The Infamous Hamburger of Bootstrap */
+.fas.fa-bars {
+    color: white;
+}
