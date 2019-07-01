@@ -80,7 +80,7 @@ hr {
     background: url('../MEDIA/LAPTOP.jpg');
 
     /* Set a specific height */
-    height: 100%;
+    height: 100%; 
     padding-bottom: 50px;
 
     /* Create the parallax scrolling effect */
