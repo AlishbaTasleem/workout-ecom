@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from '../Navbar/Navbar';
-import styles from './Landing.css';
+import './Landing.css';
 
 // Image Imports
 var VA = require('../../../assets/SVGs/VA.svg');
@@ -31,7 +31,7 @@ export default class Landing extends Component {
                 {/* Removed the class, 'parallax-effect' */}
                 <div style={bgStyling}>
                     <Navbar />
-
+                <div>
                     <section id="mainContent-P1">
                         <div className="jumbotron jumbotron-fluid">
                             <div className="mainHeader mt-3">
@@ -223,7 +223,8 @@ export default class Landing extends Component {
 
                     </div>
                 </section>
-            </div>
+                </div>
+                </div>
         )
     }
 }
