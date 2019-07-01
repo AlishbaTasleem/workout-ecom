@@ -24,7 +24,6 @@ var bgStyling = {
     backgroundSize: 'cover'
 }
 
-
 export default class Landing extends Component {
     render() {
         return (
