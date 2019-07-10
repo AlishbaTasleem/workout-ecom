@@ -1,0 +1,272 @@
+/* CUSTOM GOOGLE FONTS */
+
+/* LOGO */
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+/* JUMBOTRON - MAIN TEXT - HOMEPAGE */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,500i');
+
+/* 
+    CUSTOM CSS CODE
+
+    TIP:
+
+    1. Add the name of the component. 
+    2. Keep it as simple and meaningful as possible.
+    3. Try to maintain heirarchy. The order in which the element exists in the HTML,
+        the same order is used to style the components. (OPTIONAL)
+
+    Continue.
+
+*/
+
+/* 
+
+    GENERIC TAG STYLING - LIKE A, H1, H2...
+
+*/
+
+body {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    /* font-size: 33px; */
+    font-style: normal;
+    color: white;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+hr {
+    color: white;
+    background: white;
+    width: 60%;
+    opacity: 0.1;
+}
+
+
+/* 
+
+    CLASS BASED STYLING - LIKE .NAV, .NAVBAR....
+
+*/
+
+.under-construction {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: right;
+    height: 20px;
+    background: black;
+    color: white;
+    font-size: 15px;
+}
+
+.parallax-effect {
+    background: black;
+    background: url('/img/LAPTOP.jpg');
+
+    /* Set a specific height */
+    /* height: 100%;  */
+    /* padding-bottom: 50px; */
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.main-bg {
+    width: 100%;
+}
+
+.navbar-brand {
+    font-family: 'Anton';
+}
+
+.navbar-brand img {
+    color: white;
+}
+
+.navbar-brand-text {
+    margin-left: 5px;
+}
+
+.navbar-transparent {
+    background: transparent;
+}
+
+button:focus {
+
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focusring-color;
+
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.nav-link:hover {
+    color: #0082A6;
+    transition: 1.5s;
+}
+
+/* The Infamous Hamburger of Bootstrap */
+.fas.fa-bars {
+    color: white;
+}
+
+div.socialBar {
+    font-size: 40px;
+    margin-right: 50px;
+}
+
+/* 
+
+MAIN CONTENT 
+
+*/
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.mainHeader .container {
+    width: 30%;
+    margin-left: 50px;
+    margin-right: 0px;
+}
+
+button.btn {
+    margin-bottom: 10px;
+}
+
+.btn-light:hover {
+    background: #73538C;
+    color: white;
+    border: none;
+    transition: 0.9 ease-in-out;
+}
+
+/* 
+
+    MAIN CONTENT PART 2 - CURRENT STATS!
+
+*/
+.currentStatSection {
+    height: 100%;
+    width: 100%;
+    background: #1F1834;
+}
+
+.statsSection {
+    margin-bottom: 50px;
+    overflow-x: auto;
+}
+
+.introduction {
+    margin-top: 10%;
+    font-size: 18px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+.em-introduction {
+    padding-top: 20px;
+    font-size: 50px;
+    text-transform: none;
+}
+
+.card {
+    background: transparent;
+    border: none;
+}
+
+.card-title {
+    font-size: 45px;
+}
+
+.card-body {
+
+    font-size: 20px;
+}
+
+/* 
+
+    SERVICES SECTION - THIRD PART OF MAIN PAGE CONTENT
+
+*/
+
+
+.servicesSection {
+    height: 100%;
+    width: 100%;
+    background: white;
+    color: black;
+    font-weight: bold;
+    padding-bottom: 60px;
+}
+
+
+
+/* 
+
+    FOOTER STYLING
+
+*/
+
+.footer {
+    height: 200px;
+    width: 100%;
+    background: black;
+    color: white;
+}
+
+div.logos {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.logos a {
+    margin: 0 15px;
+}
+
+.logoIntro {
+    font-size: 15px;
+}
+
+.logos small {
+    font-size: 15px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* 
+
+    MEDIA QUERIES - ADD A TAG IF YOU DON'T WANT THEM MODIFIED!
+
+*/
+
+@media only screen and (max-device-width: 1366px) {
+    .main-bg {
+        background-attachment: scroll;
+    }
+}

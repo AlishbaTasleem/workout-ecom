@@ -1,0 +1,55 @@
+<!-- CONTENT FOR MAIN PAGE -->
+<section id="mainContent-P1">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="mainHeader mt-3">
+            <div class="row">
+                <div class="col-8 ml-5">
+                    <div class="col-6">
+                        <h1 class="display-4">Login</h1>
+                        <div class="login-container">
+                            <form class="form-horizontal" method="post" action="/api/users/login">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="email">Email:</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                            name="email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="password">Password:</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="password"
+                                            placeholder="Enter password" name="password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox"> Remember me</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-light" name="login">Login</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="socialBar d-flex flex-column align-items-end">
+                        <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.pinterest.com"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://www.dribbble.com"><i class="fab fa-dribbble"></i></a>
+                        <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
