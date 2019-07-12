@@ -1,0 +1,34 @@
+h4 {
+    text-transform: uppercase;
+}
+
+button.btn {
+    margin-bottom: 10px;
+}
+
+.btn-light:hover {
+    /* background: #73538C; */
+    color: white;
+    border: none;
+    transition: 0.9 ease-in-out;
+}
+
+.card {
+    background: transparent;
+    border: none;
+    color: black;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-body {
+    font-size: 15px;
+}
+
+.featuredJobs {
+    margin-top: 50px;
+    height: 500px;
+}

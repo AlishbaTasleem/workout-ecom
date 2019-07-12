@@ -10,6 +10,7 @@ const passport = require('passport');
 // Load routes!
 const users = require('./routes/api/users');
 const posts = require('./routes/api/posts');
+const dashboard = require('./routes/api/dashboard');
 
 // Load important keys and configurations
 const keys = require('./config/keys');
@@ -45,6 +46,7 @@ app.set('view engine', 'handlebars');
 // Use Routes
 app.use('/api/users', users);
 app.use('/api/posts', posts);
+app.use('/api/dashboard', dashboard);
 
 // Static Folder
 app.use(express.static(path.join(__dirname, 'public')))
@@ -60,11 +62,16 @@ app.use(session({
 }))
 
 app.get('/', (req, res) => {
-    res.render('landing');
+    res.render('landing', {withoutAuth: true, homescreenNav: true});
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact/contact', {withoutAuth: true, contactPg: true});
 });
 
 
 const PORT = process.env.PORT || 5000;
+
 app.use((req, res, next) => {
     // Global variable declarations go here --->
     res.locals.user = req.user || null;

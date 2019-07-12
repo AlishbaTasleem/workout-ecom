@@ -19,7 +19,8 @@ button.btn {
 /*the main contact us div */
 div.childContactus {
     color: black;
-    background: transparent;
+    /* background: transparent; */
+    background: white;
     font-size: 15px;
     margin: 30px auto;
     width: 70%;

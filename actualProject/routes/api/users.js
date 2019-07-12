@@ -29,7 +29,7 @@ router.get('/test', (req, res) => {
 // @access  public
 
 router.get('/register', (req, res) => {
-    res.render('auth/register');
+    res.render('auth/register', {withoutAuth: true});
 })
 
 // @route   POST api/users/register
@@ -80,7 +80,7 @@ router.post('/register', (req, res) => {
                     })
                 });
 
-                res.render('landing');
+                res.render('login', {withoutAuth: true});
             }
         })
 });
@@ -91,7 +91,7 @@ router.post('/register', (req, res) => {
 
 
 router.get('/login', (req, res) => {
-    res.render('auth/login');
+    res.render('auth/login', {withoutAuth: true});
 })
 
 router.post('/login', (req, res) => {
@@ -133,7 +133,7 @@ router.post('/login', (req, res) => {
                             })
                             });
                             
-                        res.render('landing')
+                        res.render('dashboard/dashboard', { withAuth: true, user: user});
 
                     } else {
                         errors.password = 'Password incorrect!';
