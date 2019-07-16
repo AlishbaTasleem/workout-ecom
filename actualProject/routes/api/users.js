@@ -4,7 +4,6 @@ const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
-
 const keys = require('../../config/keys');
 
 // Load input validation
@@ -15,26 +14,17 @@ const validateLoginInput = require('../../validation/login');
 // Load user model
 const User = require('../../models/User');
 
-// @route   GET api/users/test
-// @desc    Test Users Route
-// @access  public
 router.get('/test', (req, res) => {
     res.json({
         msg: "Users work!"
     });
 })
 
-// @route   GET api/users/register
-// @desc    Register User
-// @access  public
-
 router.get('/register', (req, res) => {
-    res.render('auth/register', {withoutAuth: true});
+    res.render('auth/register', {
+        withoutAuth: true
+    });
 })
-
-// @route   POST api/users/register
-// @desc    Register User
-// @access  public
 
 router.post('/register', (req, res) => {
 
@@ -46,7 +36,7 @@ router.post('/register', (req, res) => {
 
     // Check validation
     if (!isValid) {
-        return res.status(400, JSON(errors));
+        return res.status(400, errors);
     }
 
     User.findOne({
@@ -75,87 +65,77 @@ router.post('/register', (req, res) => {
                         if (err) throw err;
                         newUser.password = hash;
                         newUser.save()
-                            .then(user => res.json(user))
+                            .then(user => {
+                                // res.json(user)
+                                res.render('auth/login', {
+                                    withoutAuth: true
+                                });
+                            })
                             .catch(err => console.log(`Error in GenSalt: ${err}`))
                     })
                 });
 
-                res.render('login', {withoutAuth: true});
+
             }
         })
 });
 
-// @route   GET api/users/login
-// @desc    Login User - Return JWT token
-// @access  public
-
-
 router.get('/login', (req, res) => {
-    res.render('auth/login', {withoutAuth: true});
+    res.render('auth/login', {
+        withoutAuth: true
+    });
 })
 
 router.post('/login', (req, res) => {
+    const {
+        errors,
+        isValid
+    } = validateLoginInput(req.body);
 
-    const { errors, isValid } = validateLoginInput(req.body);
+    // Check Validation
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
 
     const email = req.body.email;
     const password = req.body.password;
-    // find user by email.
+
+    // Find user by email
     User.findOne({
-            email
-        })
-        .then(user => {
-            if (!user) {
-                errors.email = 'User not found!';
-                return res.status(404).JSON(errors);
+        email
+    }).then(user => {
+        // Check for user
+        if (!user) {
+            errors.email = 'User not found';
+            return res.status(404).json(errors);
+        }
+
+        // Check Password
+        bcrypt.compare(password, user.password).then(isMatch => {
+            if (isMatch) {
+                res.render('/dashboard/dashboard');
+                // res.render('dashboard/dashboard', {withAuth: true, user: user})
+            } else {
+                errors.password = 'Password incorrect';
+                return res.status(400).json(errors);
             }
-
-            // Check for password once email is matched
-            bcrypt.compare(password, user.password)
-                .then(isMatch => {
-                    if (isMatch) {
-                        // Generate token now
-                        // User matches
-
-                        // Create JWT payload
-                        const payload = {
-                            id: user.id,
-                            name: user.name,
-                            avatar: user.avatar
-                        };
-
-                        jwt.sign(payload, keys.secretOrKey, {
-                            expiresIn: 3600
-                        }, (err, token) => {
-                            res.JSON({
-                                success: true,
-                                token: 'Bearer ' + token
-                            })
-                            });
-                            
-                        res.render('dashboard/dashboard', { withAuth: true, user: user});
-
-                    } else {
-                        errors.password = 'Password incorrect!';
-                        return res.status(400).JSON(errors);
-                    }
-                })
-
         });
-
+    });
 });
 
-// @route   GET api/users/current
-// @desc    Return current user
-// @access  Private
-router.get('/current', passport.authenticate('jwt', {
-    session: false
-}), (req, res) => {
+
+
+// res.render('dashboard/dashboard', { withAuth: true, user: user});
+
+
+
+router.get('/current', (req, res) => {
     res.json({
         id: req.user.id,
         name: req.user.name,
         email: req.user.email
     });
-})
+});
+
 
 module.exports = router;

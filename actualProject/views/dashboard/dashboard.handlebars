@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container full-display-container">
     {{!-- Featured Jobs! --}}
     <section class="featuredJobs">
         {{!-- Featured Jobs, Search Bar, and Collapsible Buttons --}}
@@ -81,6 +81,50 @@
             {{!-- END OF CARD DES --}}
 
         </div>
+
+    </section>
+
+    <section class="personalProfileOptions mt-5">
+        {{!-- Profile Options and Collapsible Buttons --}}
+        <div class="row mt-3">
+            <div class="col-sm-8">
+                <h4>Profile Options</h4>
+                <button class="btn btn-primary mb-3" type="button" data-toggle="collapse" data-target="#collapseProfile"
+                    aria-expanded="true" aria-controls="collapseExample">
+                    Toggle Profile Options
+                </button>
+            </div>
+        </div>
+
+        {{!-- Collapsible 'Profile Options' --}}
+        <div class="collapse show" id="collapseProfile">
+
+            {{!-- CARD DESIGN --}}
+            <div class="row">
+                <div class="col-sm-8">
+                    <button type="button" class="btn btn-outline-light">Edit Profile</button>
+                </div>
+            </div>
+            {{!-- END OF CARD DES --}}
+            {{!-- CARD DESIGN --}}
+            <div class="row">
+                <div class="col-sm-8">
+                    <button type="button" class="btn btn-outline-light">Edit Education</button>
+                </div>
+            </div>
+            {{!-- END OF CARD DES --}}
+            {{!-- CARD DESIGN --}}
+            <div class="row">
+                <div class="col-sm-8">
+                    <button type="button" class="btn btn-outline-light">Edit Experience</button>
+                </div>
+            </div>
+            {{!-- END OF CARD DES --}}
+
+
+
+        </div>
+
 
     </section>
 
