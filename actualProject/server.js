@@ -19,6 +19,8 @@ const messages = require('./routes/api/messages');
 
 // Load important keys and configurations
 const keys = require('./config/keys');
+const stripe = require("stripe")(keys.secretKey);
+
 // Fix the keys file.
 const db = require('./config/keys').mongoURI;
 
@@ -57,7 +59,7 @@ app.set('view engine', 'handlebars');
 
 // Static Folder
 app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.static('views/images')); 
+app.use(express.static('views/images'));
 
 // Method-override Middleware
 app.use(methodOverride('_method'));
@@ -91,8 +93,8 @@ app.get('/logout', (req, res) => {
     res.render('landing', {
         withoutAuth: true,
         homescreenNav: true,
-        user: req.session.user || null,
-        isSession: req.session.uid || false
+        user: null,
+        isSession: false
     });
 
 });
@@ -105,6 +107,34 @@ app.get('/contact', (req, res) => {
         isSession: req.session.uid || false
     });
 });
+
+app.get('/charge', (req, res) => {
+    res.render('charge');
+});
+
+app.post("/charge", (req, res) => {
+    let amount = 500;
+
+    stripe.customers.create({
+            email: req.body.email,
+            card: req.body.id
+        })
+        .then(customer =>
+            stripe.charges.create({
+                amount,
+                description: "Sample Charge",
+                currency: "usd",
+                customer: customer.id
+            }))
+        .then(charge => res.send(charge))
+        .catch(err => {
+            console.log("Error:", err);
+            res.status(500).send({
+                error: "Purchase Failed"
+            });
+        });
+});
+
 
 // Use Routes
 app.use('/api/users', users);

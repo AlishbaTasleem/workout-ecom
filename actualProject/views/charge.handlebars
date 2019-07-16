@@ -1,0 +1,42 @@
+<div class="container">
+    <div id="shop" style="height:400px; margin-top: 50px;">
+        <h1>Initiate Stripe Payment</h1>
+        <p>Press the checkout button to continue to the Stripe dashboard and continue withdrawals or payment
+            proceedings.</p>
+        <button class="btn btn-primary" id="buttonCheckout">Make Payments</button><br><br>
+        <button class="btn btn-success" id="buttonCheckout">Withdraw Amount</button><br><br>
+        <button class="btn btn-primary" id="buttonCheckout">Verify Account Status</button><br><br>
+        <button class="btn btn-danger" id="buttonCheckout">Remove Stripe Account</button><br><br>
+
+    </div>
+</div>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<script>
+    var checkoutHandler = StripeCheckout.configure({
+        key: "pk_test_eCTbdo59r8okoK5H5xoW7sE200YSlrfQIR",
+        locale: "auto"
+    });
+
+    var button = document.getElementById("buttonCheckout");
+    button.addEventListener("click", function (ev) {
+        checkoutHandler.open({
+            name: "Sample Store",
+            description: "Example Purchase",
+            token: handleToken
+        });
+    });
+
+    function handleToken(token) {
+        fetch("/charge", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(token)
+        })
+            .then(output => {
+                if (output.status === "succeeded")
+                    document.getElementById("shop").innerHTML = "<p>Purchase complete!</p>";
+            })
+    }
+</script>

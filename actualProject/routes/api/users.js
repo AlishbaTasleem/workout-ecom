@@ -88,17 +88,17 @@ router.post('/register', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (!req.session.uid) {
-        res.render('auth/login', {
-            withoutAuth: true,
-            navLogin: true
-        });
-    } else {
+    if (req.session.uid) {
         return res.render('dashboard/dashboard', {
             withAuth: true,
             user: req.session.user
-        })
+        });
     }
+    
+    res.render('auth/login', {
+        withoutAuth: true,
+        navLogin: true
+    });
 })
 
 router.post('/login', (req, res) => {
