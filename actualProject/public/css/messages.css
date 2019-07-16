@@ -1,0 +1,60 @@
+div.row {
+    margin-top: 10px;
+}
+
+.msg-bar {
+    /* background:white; */
+    height: 500px;
+}
+
+.single-msg:hover {
+    background: #73538C;
+    border-radius: 2%;
+    transition: ease 1s;
+}
+
+.active-bar {
+    height:500px;
+    background:whitesmoke;
+    padding: 20px;
+    border-radius: 2%;
+    color: black;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    margin-right: 20px;
+    /* display: inline; */
+}
+
+.active-bar img {
+    margin-left: 10px;
+}
+
+.sender-name {
+    display: inline;
+    font-size: 15px;
+}
+
+.sender-msg {
+    display: inline;
+    font-size: 10px;
+}
+
+.single-msg {
+    padding: 10px;
+}
+
+.msg:hover {
+    color: palevioletred;
+    transition: ease-in 0.5s;
+}
+
+textarea {
+    outline: none;
+    border: none;
+    background: transparent;
+    resize: none;
+    border-bottom: 1px solid black;
+    margin-right: 50px;
+}

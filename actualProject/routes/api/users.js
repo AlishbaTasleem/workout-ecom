@@ -21,9 +21,16 @@ router.get('/test', (req, res) => {
 })
 
 router.get('/register', (req, res) => {
-    res.render('auth/register', {
-        withoutAuth: true
-    });
+    if (!req.session.uid) {
+        res.render('auth/register', {
+            withoutAuth: true
+        });
+    } else {
+        res.render('dashboard/dashboard', {
+            withAuth: true,
+            user: req.session.user
+        })
+    }
 })
 
 router.post('/register', (req, res) => {
@@ -81,9 +88,17 @@ router.post('/register', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    res.render('auth/login', {
-        withoutAuth: true
-    });
+    if (!req.session.uid) {
+        res.render('auth/login', {
+            withoutAuth: true,
+            navLogin: true
+        });
+    } else {
+        return res.render('dashboard/dashboard', {
+            withAuth: true,
+            user: req.session.user
+        })
+    }
 })
 
 router.post('/login', (req, res) => {
@@ -113,8 +128,13 @@ router.post('/login', (req, res) => {
         // Check Password
         bcrypt.compare(password, user.password).then(isMatch => {
             if (isMatch) {
-                res.render('/dashboard/dashboard');
-                // res.render('dashboard/dashboard', {withAuth: true, user: user})
+                req.session.uid = user.id
+                req.session.user = user
+                res.render('dashboard/dashboard', {
+                    withAuth: true,
+                    user: user,
+                    isSession: true
+                });
             } else {
                 errors.password = 'Password incorrect';
                 return res.status(400).json(errors);
@@ -122,12 +142,6 @@ router.post('/login', (req, res) => {
         });
     });
 });
-
-
-
-// res.render('dashboard/dashboard', { withAuth: true, user: user});
-
-
 
 router.get('/current', (req, res) => {
     res.json({

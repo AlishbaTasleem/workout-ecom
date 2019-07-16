@@ -13,6 +13,9 @@ const passport = require('passport');
 const users = require('./routes/api/users');
 const posts = require('./routes/api/posts');
 const dashboard = require('./routes/api/dashboard');
+const settings = require('./routes/api/settings');
+const jobs = require('./routes/api/jobs');
+const messages = require('./routes/api/messages');
 
 // Load important keys and configurations
 const keys = require('./config/keys');
@@ -54,6 +57,7 @@ app.set('view engine', 'handlebars');
 
 // Static Folder
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('views/images')); 
 
 // Method-override Middleware
 app.use(methodOverride('_method'));
@@ -65,7 +69,10 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     store: new MongoStore({
-        mongooseConnection: mongooseCon
+        mongooseConnection: mongooseCon,
+        autoRemove: 'interval', // Default,
+        autoRemoveInterval: 30 // minutes
+
     })
 }));
 
@@ -73,26 +80,40 @@ app.get('/', (req, res) => {
     res.render('landing', {
         withoutAuth: true,
         homescreenNav: true,
+        user: req.session.user || null,
+        isSession: req.session.uid || false
+    });
+
+});
+
+app.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.render('landing', {
+        withoutAuth: true,
+        homescreenNav: true,
+        user: req.session.user || null,
         isSession: req.session.uid || false
     });
 
 });
 
 app.get('/contact', (req, res) => {
-        res.render('contact/contact', {
-            withoutAuth: true,
-            contactPg: true,
-            isSession: req.session.uid || false
-        });
-    }
-);
+    res.render('contact/contact', {
+        withoutAuth: true,
+        contactPg: true,
+        user: req.session.user || null,
+        isSession: req.session.uid || false
+    });
+});
 
 // Use Routes
 app.use('/api/users', users);
 app.use('/api/posts', posts);
 app.use('/api/dashboard', dashboard);
-
-
+app.use('/api/messages', messages);
+app.use('/api/jobs', jobs);
+app.use('/api/settings', settings);
+// app.user('/api/', );
 
 const PORT = process.env.PORT || 5000;
 
